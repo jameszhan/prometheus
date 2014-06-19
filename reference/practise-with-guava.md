@@ -27,7 +27,7 @@
 
 ##代码示例
 
-###使用Guava，可以有效地减少代码数量
+* 使用Guava，可以有效地减少代码数量
 
 ~~~java
 // 快速构建Map
@@ -42,7 +42,7 @@ List<String> list = FluentIterable.from(ImmutableList.of(9, 8, 7, 6, 5, 4, 3, 2,
     .toList();   //[8, 5]
 ~~~
 
-###使用Guava Cache，对于对时效要求不高，并且获取完整信息代价高昂（可能需要访问多个远端服务），在一个用户连续访问的时候可以有效提高效率
+* 使用Guava Cache，对于对时效要求不高，并且获取完整信息代价高昂（可能需要访问多个远端服务），在一个用户连续访问的时候可以有效提高效率
 
 ~~~java
 private final LoadingCache<Long, OfferInfo> offerCache = CacheBuilder.newBuilder()
@@ -54,5 +54,5 @@ private final LoadingCache<Long, OfferInfo> offerCache = CacheBuilder.newBuilder
 ~~~
 
 ##参考
-[Google Guava官方教程](http://code.google.com/p/guava-libraries/wiki/GuavaExplained) <abbr>万恶的GFW</abbr>
-[Google Guava官方教程（中文版）](http://ifeve.com/google-guava/)
+1. [Google Guava官方教程](http://code.google.com/p/guava-libraries/wiki/GuavaExplained) <del>万恶的GFW</del>
+2. [Google Guava官方教程（中文版）](http://ifeve.com/google-guava/)
