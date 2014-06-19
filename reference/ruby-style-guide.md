@@ -1,4 +1,4 @@
-## Ruby和Rails的代码规范
+## Ruby和Rails相关资料
 
 [ruby-style-guide](https://github.com/bbatsov/ruby-style-guide)
 
@@ -8,7 +8,11 @@
 
 [rails-style-guide中文版](https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md)
 
+[Ruby Doc](http://ruby-doc.org/)
+
 [Rails Guide](http://guides.rubyonrails.org/)
+
+[Ruby Gem Ranking](https://www.ruby-toolbox.com/)
 
 [Ruby元编程附录](./ruby-metaprogramming-appendixes.md)
 
