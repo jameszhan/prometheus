@@ -11,7 +11,7 @@ puts "Hello,world!"
 这里的 puts 实际上是个方法，完整写法
 
 ~~~ruby
-puts(“Hello,world!”)
+puts("Hello,world!")
 ~~~
 
 去掉括号的写法使得它像个关键字，同时也更为简洁，因此称之为拟态方法。
