@@ -23,6 +23,7 @@
 * [Java Object Model](http://pan.baidu.com/s/1gdGbOrT) nmmq
 * [Introduction of Python's Object Model](http://pan.baidu.com/s/1i3oTzCx) c492
 * [The Common LISP ObjectModel](http://pan.baidu.com/s/1o6K7qfo) 4ve0
+* [JavaScript Object Model](./javascript-object-model.md)
 
 
 ##### 字符串构建
