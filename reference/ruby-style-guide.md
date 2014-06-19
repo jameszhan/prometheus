@@ -14,7 +14,10 @@
 
 #### A.1 拟态方法（Mimic Methods）
 
-puts “Hello,world!”
+~~~ruby
+puts "Hello,world!"
+~~~
+
 这里的 puts 实际上是个方法，完整写法
 
 ~~~ruby
@@ -252,10 +255,8 @@ class Symbol
 end
 ~~~
 
-
-
 ### 法术手册
-#### C.1 法术集 (The Spells)
+#### 法术集 (The Spells)
 
 ##### 数组参数(Argument Array)
 把一组参数压入到一个数组中。
@@ -266,7 +267,6 @@ def my_method(*args)
 end
 my_method('abc' , 'xyz' , '123' ) # =]]> ["cba", "zyx", "321"]
 ~~~
-
 
 ##### 环绕别名(Around Alias)
 从一个重新定义的方法中调用原始的、被重命名的版本。
@@ -286,7 +286,6 @@ end
 
 "abc".reverse # => "xcbax"
 ~~~
-
 
 ##### 白板(Blank Slate)
 移除一个对象中的所有方法，以便通过method_missing添加幽灵方法。主要目的避免原有类中的方法同新增方法产生冲突。注意以__开头的方法不能移除，比如__send__等。
@@ -309,7 +308,6 @@ end
 
 obj.to_s # => "a Ghost Method"
 ~~~
-
 
 ##### 类扩展(Class Extension)
 通过向eigenclass中混入模块来定义类方法（是对象扩展的一个特例）。
@@ -364,7 +362,6 @@ end
 C.my_method # => "a class method"
 ~~~
 
-
 ##### 类实例变量(Class Instance Variable)
 在一个 Class 对象的实例变量中存储类级别的状态。
 核心提示：
@@ -400,8 +397,6 @@ class C
 end
 ~~~
 
-
-
 ##### 洁净室(Clean Room)
 使用对象作为执行块的上下文环境
 实际上就是通过 instance_eval 限定执行块的作用域。
@@ -426,7 +421,6 @@ end
 #>> 3 * 2 ==> 6
 #>> Math.log10(100) ==> 2.0
 ~~~
-
 
 ##### 上下文探针(Context Probe)
 执行块来获取对象上下文中的信息。
@@ -461,7 +455,6 @@ $X = 0
 obj.execute
 $X # => 1
 ~~~
-
 
 ##### 动态派发(Dynamic Dispatcher)
 在运行时决定调用哪个方法
@@ -507,7 +500,6 @@ end
 obj = MyDynamicProxy.new("a string")
 obj.reverse # => "result: gnirts a"
 ~~~
-
 
 ##### 扁平作用域(Flat Scope)
 使用闭包在两个作用域之间共享变量(以下用例不典型)
@@ -576,7 +568,6 @@ end
 a_method # => "a kernel method"
 ~~~
 
-
 ##### 惰性实例变量(Lazy Instance Variable)
 当第一次访问一个实例变量时才对之进行初始化。
 
@@ -589,7 +580,6 @@ end
 obj = C.new
 obj.attribute # => "some value"
 ~~~
-
 
 ##### 拟态方法(Mimic Method)
 把一个方法伪装成另外一种语言构件。
@@ -605,7 +595,6 @@ end
 obj = C.new
 obj.an_attribute = 1 # 伪装成属性的方法
 ~~~
-
 
 ##### 猴子打补丁(Monkeypatch)
 修改已有类的特性。
@@ -671,7 +660,6 @@ class << obj
 end
 obj.my_method # => "a singleton method"
 ~~~
-
 
 ##### 打开类(Open Class)
 修改已有的类
@@ -758,7 +746,6 @@ joe = Person.new do |p|
 end
 ~~~
 
-
 ##### 共享作用域(Shared Scope)
 在同一个扁平作用域的多个上下文中共享变量。
 
@@ -808,12 +795,3 @@ eval(my_string_of_code) # => 2
 ~~~ruby
 [1, 2, 3, 4].map(&:even?) # => [false, true, false, true]
 ~~~
-
-
-
-
-
-
-
-
-
