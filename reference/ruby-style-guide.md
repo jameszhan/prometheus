@@ -8,6 +8,8 @@
 
 [rails-style-guide中文版](https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md)
 
+[Rails Guide](http://guides.rubyonrails.org/)
+
 [Ruby元编程附录](./ruby-metaprogramming-appendixes.md)
 
 
