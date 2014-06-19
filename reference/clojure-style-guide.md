@@ -7,3 +7,5 @@
 * [Lisp方言比较](http://hyperpolyglot.org/lisp)
 
 * [我为什么喜欢Lisp](http://pupeno.com/2011/08/16/why-i-love-lisp/)
+
+* [The Nature of Lisp](http://www.defmacro.org/ramblings/lisp.html)
