@@ -17,6 +17,14 @@
 [Ruby元编程附录](./ruby-metaprogramming-appendixes.md)
 
 
+编程语言对象模型
+* [Inside the Ruby Object Model](http://pan.baidu.com/s/1COmIE) 8jji
+* [C++ Object Model](http://pan.baidu.com/s/1o6AxTl4) wad5
+* [Java Object Model](http://pan.baidu.com/s/1gdGbOrT) nmmq
+* [Introduction of Python's Object Model](http://pan.baidu.com/s/1i3oTzCx) c492
+* [The Common LISP ObjectModel](http://pan.baidu.com/s/1o6K7qfo) 4ve0
+
+
 ##### 字符串构建
 
 * %{String}  用于创建一个使用双引号括起来的字符串
