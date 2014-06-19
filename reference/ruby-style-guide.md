@@ -8,7 +8,7 @@
 
 [rails-style-guide中文版](https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md)
 
-[Ruby元编程附录](../articles/ruby-metaprogramming-appendixes.md)
+[Ruby元编程附录](./ruby-metaprogramming-appendixes.md)
 
 
 ##### 字符串构建
