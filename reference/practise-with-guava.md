@@ -32,8 +32,8 @@
 ~~~java
 // 快速构建Map
 Map<String, Integer> map = ImmutableMap.of("a", 1, "b", 2, "c", 3);
-// 把key中的"."替换成“_”
-String key = Joiner.on('_').join(Splitter.on('.').split(key));
+// 把key中的"."或"-"替换成“_”
+String key = Splitter.on(CharMatcher.anyOf("-.")).join(Splitter.on('.').split(key));
 // Fluent API
 List<String> list = FluentIterable.from(ImmutableList.of(9, 8, 7, 6, 5, 4, 3, 2, 1, 0))
     .filter(Predicates.in(ImmutableList.of(1, 2, 3, 5, 8, 13, 21)))
