@@ -1,30 +1,32 @@
 require './optional'
 
 class Module
-
-  def define_attr(*attrs)
-    attrs.each{|attr| define_attr_internal attr }
-  end
-
 =begin
   def attr_accessor(*syms)
     syms.each do|sym|
-      class_eval %{
+      class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
         def #{sym}
           @#{sym}
         end
         def #{sym}=(val)
           @#{sym} = val
         end
-      }
-      end
+      RUBY_EVAL
+    end
   end
 =end
+
+
+  def define_attr(*attrs)
+    attr_accessor *attrs
+    attrs.each{|attr| define_attr_internal attr }
+  end
 
   private
     def define_attr_internal(attr)
       if attr.to_s =~ /^[\w_]+$/
         class_eval do
+
           define_method "#{attr}=" do |value|
             instance_variable_set("@#{attr}", value)
           end
@@ -32,10 +34,11 @@ class Module
           define_method "#{attr}" do
             instance_variable_get("@#{attr}")
           end
-          
+
           define_method "#{attr}?" do
             Optional.new(self.send attr.to_sym)
           end
+
           define_method "#{attr}!" do
             val = self.send attr.to_sym
             if val
@@ -44,6 +47,7 @@ class Module
               raise Error.new("#{attr} is not found")
             end
           end
+
         end
       else
         puts "Invalid attr name #{attr}"
