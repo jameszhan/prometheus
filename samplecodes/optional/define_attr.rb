@@ -6,6 +6,21 @@ class Module
     attrs.each{|attr| define_attr_internal attr }
   end
 
+=begin
+  def attr_accessor(*syms)
+    syms.each do|sym|
+      class_eval %{
+        def #{sym}
+          @#{sym}
+        end
+        def #{sym}=(val)
+          @#{sym} = val
+        end
+      }
+      end
+  end
+=end
+
   private
     def define_attr_internal(attr)
       if attr.to_s =~ /^[\w_]+$/
