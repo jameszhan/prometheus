@@ -249,6 +249,33 @@ class Module
     end
 
 end
+class Person
+  define_attr :contact
+end
+
+class Contact
+  define_attr :address
+end
+
+class Address
+  define_attr :province, :city, :street
+end
+
+addr = Address.new
+addr.province = 'Guangdong'
+addr.city = 'Shenzhen'
+addr.street = '699'
+
+contact = Contact.new
+contact.address = addr
+
+person = Person.new
+person.contact = contact
+
+person2 = Person.new
+
+puts person2.contact?.address?.city!
+puts person.contact?.address?.city!
 ~~~
 
 
