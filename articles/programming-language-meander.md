@@ -107,8 +107,14 @@ Swift尽管用的是Nominal Subtyping，但是swift中有extension，可以在�
 ### 闭包
 在计算机科学中，闭包（Closure）是词法闭包（Lexical Closure）的简称，是引用了自由变量的表达式（通常是函数）。这些被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。
 词法作用域(lexical scope)等同于静态作用域(static scope)。所谓的词法作用域其实是指作用域在词法解析阶段既确定了，不会改变。
+
 闭包的数据结构可以定义为，包含一个函数定义 f 和它定义时所在的环境
 (struct Closure (f env))
+1. 全局函数是一个有名字但不会捕获任何值的闭包。
+2. 嵌套函数是一个有名字并可以捕获其封闭函数域内值得闭包。
+3. Lambda(闭包表达式)是一个利用轻量级语法所写的可以捕获其上下文中变量值的匿名闭包。
+
+闭包 vs 函数指针
 
 ### Mixin
 Ruby 优雅的Mixin方案
@@ -286,8 +292,16 @@ puts person.contact?.address?.city!
 #### C++ template 生成代码
 静态展开
 
+#### 万能的eval
+Python, JavaScript都只含有全局的eval，只能解析字符串，尽管也可以完成想要的功能，确是相当不便和不安全。
+Ruby 中不仅有传统的eval，还有class_eval，instance_eval，不仅可以解析字符串，还允许执行代码块。
+上例中的Ruby Optional的例子就用到了class_eval，把eval限制在了类的内部。
+
 #### 强大的宏
-Ruby 中的类宏，熟悉ruby的同学肯定都很熟悉attr_accessor，它可以很方便地帮类成员生成set和get方法。
+
+CLOS（Common Lisp面向对象系统）就是直接用宏编写而成。
+
+Ruby中的宏，功能相比Lisp中宏的用法当然要弱了许多，但是依然可以满足大部分的元编程需求。熟悉ruby的同学肯定都很熟悉attr_accessor，它可以很方便地帮类成员生成set和get方法。
 
 ~~~ruby
 class Module
@@ -305,11 +319,6 @@ class Module
   end
 end
 ~~~
-
-#### 万能的eval
-Python, JavaScript都只含有全局的eval，只能解析字符串，尽管也可以完成想要的功能，确是相当不便和不安全。
-Ruby 中不仅有传统的eval，还有class_eval，instance_eval，不仅可以解析字符串，还允许执行代码块。
-上例中的Ruby Optional的例子就用到了class_eval，把eval限制在了类的内部。
 
 #### 动态语言的 method_missing
 ~~~ruby
@@ -466,6 +475,9 @@ end
 * ClojureScript，CoffeeScript 生成 JavaScript源码
 * Scala，Clojure，Groovy 生成 Java字节码
 * Swift，Object-C 生成 LLVM字节码
+
+### 语言生态
+多语言协同
 
 ### 程序员分工更明晰
 以往，有经验的程序员设计库和框架，普通程序员开发上层应用，以后的趋势可能是这样的，资深的程序员设计DSL语言的实现，普通的开发人员使用该DSL构建应用。
